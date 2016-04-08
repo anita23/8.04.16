@@ -1,0 +1,18 @@
+install.packages("fpp")
+require(fpp)
+Acf(beer)
+xx<- Acf(beer, main="ACF of quarterly beer production")
+### si pasa la linea punteadda azul hay correlación 
+names(xx)
+xx$acf
+#### el correolograma nos va a determinar si hay correlación o no #### cuando hay una st que tiene muchas lineas que se salen del rango quiere decir que existe estacionalidad
+#### la grafica que genmera acf se le denomina 
+## correlograma y permite identificar la autocorrelación de una serie de tiempo 
+
+#####netflix####
+netflix<- read.csv("C:\\Users\\SALA-C15\\Downloads\\netflix.csv", header= TRUE)
+net<- ts(netflix[,5], start = 2015, frequency = 12)
+plot.ts(net)
+Acf(net)
+xx <- Acf(net, main= "Acf de las acciones de netflix")
+xx$acf  #### datos para verificar la GRAFICA (TABLA DE DATOS)
